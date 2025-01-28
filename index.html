@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant - Next-Gen Chatbot</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- AOS Library for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Chatling AI Integration -->
+    <script>
+        window.chtlConfig = { 
+            chatbotId: "5812482993",
+            api: true,
+            callbacks: {
+                onOpen: function() {
+                    hideChatIndicator();
+                },
+                onClose: function() {
+                    setTimeout(showChatIndicator, 5000);
+                },
+                onLoad: function() {
+                    console.log('Chatbot loaded successfully');
+                    setTimeout(showChatIndicator, 3000);
+                }
+            }
+        }
+    </script>
+    <script async data-id="5812482993" id="chatling-embed-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-background">
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <nav class="glass-nav">
+            <div class="logo">
+                <i class="fas fa-robot"></i>
+                <span>AI Assistant</span>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#features" class="nav-link"><i class="fas fa-star"></i> Features</a></li>
+                <li><a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="animated-text">Experience Next-Gen AI Assistant</h1>
+            <p class="gradient-text">Unleash the power of intelligent conversations with our AI chatbot</p>
+            <div class="cta-buttons">
+                <a href="#" class="cta-button primary" id="try-now-btn">
+                    <i class="fas fa-robot"></i>
+                    Try Now
+                    <span class="button-effect"></span>
+                </a>
+                <a href="#about" class="cta-button secondary">
+                    <i class="fas fa-info-circle"></i>
+                    Learn More
+                    <span class="button-effect"></span>
+                </a>
+            </div>
+        </div>
+        <div class="hero-image" data-aos="fade-left">
+            <div class="floating-elements">
+                <div class="circle"></div>
+                <div class="square"></div>
+                <div class="triangle"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2 class="section-title" data-aos="fade-up">Amazing Features</h2>
+        <div class="feature-grid">
+            <div class="feature-card glass" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fas fa-clock feature-icon"></i>
+                <h3>24/7 Availability</h3>
+                <p>Always ready to assist you, anytime and anywhere</p>
+                <div class="card-effect"></div>
+            </div>
+            <div class="feature-card glass" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fas fa-brain feature-icon"></i>
+                <h3>Smart AI</h3>
+                <p>Powered by advanced artificial intelligence</p>
+                <div class="card-effect"></div>
+            </div>
+            <div class="feature-card glass" data-aos="zoom-in" data-aos-delay="300">
+                <i class="fas fa-bolt feature-icon"></i>
+                <h3>Instant Responses</h3>
+                <p>Get quick and accurate answers to your questions</p>
+                <div class="card-effect"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about glass">
+        <div class="about-content" data-aos="fade-right">
+            <h2 class="section-title">About Our AI</h2>
+            <p>Our next-generation AI assistant is designed to revolutionize the way you interact with technology. Powered by Chatling.ai, it provides intelligent, context-aware responses that make every conversation feel natural and meaningful.</p>
+            <div class="stats">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-users"></i>
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">Users</span>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-comments"></i>
+                    <span class="stat-number">50k+</span>
+                    <span class="stat-label">Chats</span>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-smile"></i>
+                    <span class="stat-number">99%</span>
+                    <span class="stat-label">Satisfaction</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-robot"></i>
+                <span>AI Assistant</span>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <p>&copy; 2025 AI Assistant. All rights reserved.</p>
+    </footer>
+
+    <!-- Chat Indicator -->
+    <div class="chat-indicator" id="chat-indicator">
+        <i class="fas fa-comment-dots"></i>
+        <span>Need help? Chat with our AI Assistant!</span>
+    </div>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') === '#') return; // Skip for Try Now button
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Chat indicator functions
+        function showChatIndicator() {
+            const indicator = document.getElementById('chat-indicator');
+            indicator.classList.add('show');
+        }
+
+        function hideChatIndicator() {
+            const indicator = document.getElementById('chat-indicator');
+            indicator.classList.remove('show');
+        }
+
+        // Try Now button click handler with enhanced feedback
+        document.getElementById('try-now-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Add pulse animation
+            this.classList.add('pulse');
+            
+            // Remove pulse class after animation
+            setTimeout(() => {
+                this.classList.remove('pulse');
+            }, 500);
+
+            // Try to open chat
+            if (window.Chatling && window.Chatling.show) {
+                window.Chatling.show();
+                hideChatIndicator();
+            } else {
+                // Show loading state
+                const originalText = this.innerHTML;
+                this.innerHTML = `
+                    <i class="fas fa-robot"></i>
+                    Loading
+                    <div class="loading-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                `;
+
+                // Reset button after timeout
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                    console.log('Chatling widget is not ready yet. Please try again in a moment.');
+                }, 2000);
+            }
+        });
+
+        // Make chat indicator clickable
+        document.getElementById('chat-indicator').addEventListener('click', function() {
+            if (window.Chatling && window.Chatling.show) {
+                window.Chatling.show();
+                hideChatIndicator();
+            }
+        });
+    </script>
+</body>
+</html>
